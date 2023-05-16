@@ -24,8 +24,15 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    container:
+            image: docker.io/middesb/gh_actions_app:0.0.2
+            credentials:
+               username: middesb
+               password: ${{  secrets.DOCKER_CONTAINER_REGISTRY_TOKEN }}
 
     steps:
+    - name: download image from docker
     - uses: actions/checkout@v3
-
     - run: ls -ltr
+    - run: docker save  -o midde/image.tar middesb/argo_actions_app:0.0.1 
+    - run: ls midde -ltr
