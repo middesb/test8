@@ -28,7 +28,7 @@ jobs:
             image: docker.io/middesb/gh_actions_app:0.0.2
             credentials:
                username: middesb
-               password: ${{  secrets.DOCKER_CONTAINER_REGISTRY_TOKEN }}
+               password: ${{  secrets.TEST_DOCKER_PWD }}
 
     steps:
       - uses: actions/checkout@v3
