@@ -29,16 +29,18 @@ jobs:
       matrix:
         platform:
           - linux/amd64
-    container:
-            image: docker.io/middesb/test_repository:v1
-            credentials:
-               username: middesb
-               password: ${{  secrets.TEST_DOCKER_PWD }}
+
 
     steps:
       - uses: actions/checkout@v3
-      - run: |
+      - name: docker login
+        env: 
+         DOCKER_USER: middesb
+         DOCKER_PWD: ${{  secrets.TEST_DOCKER_PWD }}
+        run: |
+           docker login -u $DOCKER_USER -p $DOCKER_PWD
            mkdir ecr_artifact 
+         
            docker save  -o ecr_artifact/image.tar middesb/test_repository:v1 
            ls -ltr ecr_artifact
-      - run: ls -ltr
+           ls -ltr
