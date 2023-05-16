@@ -31,8 +31,8 @@ jobs:
                password: ${{  secrets.DOCKER_CONTAINER_REGISTRY_TOKEN }}
 
     steps:
-    - name: download image from docker
-    - uses: actions/checkout@v3
-    - run: ls -ltr
-    - run: docker save  -o midde/image.tar middesb/argo_actions_app:0.0.1 
-    - run: ls midde -ltr
+      - name: download image from docker
+      - uses: actions/checkout@v3
+      - run: ls -ltr
+      - run: docker save  -o midde/image.tar middesb/argo_actions_app:0.0.1 
+      - run: ls midde -ltr
