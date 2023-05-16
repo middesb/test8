@@ -25,7 +25,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container:
-            image: docker.io/middesb/gh_actions_app:0.0.2
+            image: docker.io/middesb/test_repository:v1
             credentials:
                username: middesb
                password: ${{  secrets.TEST_DOCKER_PWD }}
@@ -37,7 +37,6 @@ jobs:
         run: |
                  # Whatever commands you want to run here using the container with your
                  # new Docker image at ghcr.io!
-                 echo "--This is test-
-                 docker pull middesb/argo_actions_app:0.0.1 
-                 docker save  -o midde/image.tar middesb/argo_actions_app:0.0.1 
+                 echo "--This is test
+                 docker save  -o midde/image.tar middesb/test_repository:v1 
                  ls midde -ltr
