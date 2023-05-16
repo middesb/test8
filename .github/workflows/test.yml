@@ -31,7 +31,6 @@ jobs:
                password: ${{  secrets.DOCKER_CONTAINER_REGISTRY_TOKEN }}
 
     steps:
-      - name: download image from docker
       - uses: actions/checkout@v3
       - name: download image from docker
         shell: bash
