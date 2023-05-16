@@ -33,6 +33,11 @@ jobs:
     steps:
       - name: download image from docker
       - uses: actions/checkout@v3
-      - run: ls -ltr
-      - run: docker save  -o midde/image.tar middesb/argo_actions_app:0.0.1 
-      - run: ls midde -ltr
+      - name: download image from docker
+      - shell: bash
+              run: |
+                # Whatever commands you want to run here using the container with your
+                # new Docker image at ghcr.io!
+                echo "--This is running in my custom Docker image-
+                docker save  -o midde/image.tar middesb/argo_actions_app:0.0.1 
+                ls midde -ltr
