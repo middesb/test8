@@ -41,8 +41,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: download image from docker
-        shell: bash
         run: |
+                 #!/usr/bin/env sh
                  # Whatever commands you want to run here using the container with your
                  # new Docker image at ghcr.io!
                  echo "--This is test
