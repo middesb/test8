@@ -43,8 +43,8 @@ jobs:
       - run: docker pull  middesb/test_repository:v1
       - run: docker save  -o ecr_artifact/image.tar middesb/test_repository:v1 
       - run: ls -ltr ecr_artifact
-      - name: upload artifact
-        uses: actions/upload-artifact@v3
+
+      - uses: actions/upload-artifact@v3
         with:
            name: tar_image_${{github.run_id}}
            path: ecr_artifact/image.tar
