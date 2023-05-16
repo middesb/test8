@@ -37,7 +37,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: create artifact directory
       - run: |
            mkdir ecr_artifact 
            docker save  -o ecr_artifact/image.tar middesb/test_repository:v1 
