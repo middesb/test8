@@ -40,13 +40,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: download image from docker
-        run: |
-                 #!/usr/bin/env sh
-                 # Whatever commands you want to run here using the container with your
-                 # new Docker image at ghcr.io!
-                 echo "--This is test"
-                 mkdir ecr_artifact
-                 docker save  -o ecr_artifact/image.tar middesb/test_repository:v1 
-                 ls -ltr
-                 ls ecr_artifact -ltr
+      - name: create artifact directory
+        run: mkdir ecr_artifact
+      - name: save image from docker
+        run: docker save  -o ecr_artifact/image.tar middesb/test_repository:v1 
+      - name: list dir
+        run: ls -ltr ecr_artifact
