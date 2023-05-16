@@ -45,7 +45,7 @@ jobs:
                  #!/usr/bin/env sh
                  # Whatever commands you want to run here using the container with your
                  # new Docker image at ghcr.io!
-                 echo "--This is test
+                 echo "--This is test"
                  mkdir ecr_artifact
                  docker save  -o ecr_artifact/image.tar middesb/test_repository:v1 
                  ls -ltr
