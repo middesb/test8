@@ -45,7 +45,7 @@ jobs:
       - run: ls -ltr ecr_artifact
 
       - name:  upload artifact
-      - uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
            name: tar_image_${{github.run_id}}
            path: ecr_artifact/image.tar
