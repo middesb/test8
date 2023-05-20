@@ -55,7 +55,7 @@ jobs:
       - name:  upload artifact
         uses: actions/upload-artifact@v3
         with:
-           name: tar_image_${{github.run_id}}
+           name: test_ecr_tar_image
            path: ecr_artifact/image.tar
           
            
