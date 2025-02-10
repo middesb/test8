@@ -53,7 +53,7 @@ jobs:
          ls -ltr ecr_artifact
 
       - name:  upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
            name: test_ecr_tar_image
            path: ecr_artifact/image.tar
