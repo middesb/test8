@@ -38,8 +38,8 @@ jobs:
       #   with:
       #     username: middesb
       #     password: ${{ secrets.TEST_DOCKER_PWD }}
-      # - name: docker pull and save 
-      #   run: |
+      - name: docker pull and save 
+        run: |
         
          # build image and tag it
          docker build -t  middesb/test_repository:v1 .
